@@ -24,6 +24,7 @@ export default defineConfig(async () => {
       vinext(),
       cloudflare({
         viteEnvironment: { name: 'rsc', childEnvironments: ['ssr'] },
+        inspectorPort: false,
       }),
     ],
   };

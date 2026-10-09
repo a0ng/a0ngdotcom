@@ -466,3 +466,689 @@ footer {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Frutiger Aero landing-page study. Scoped so the projects archive stays intact. */
+.aero-page {
+  --aero-navy: #0b335a;
+  --aero-blue: #126bae;
+  --aero-aqua: #36c7df;
+  --aero-lime: #c5f850;
+  min-height: 100svh;
+  overflow: clip;
+  background: #e9f8fb;
+  color: var(--aero-navy);
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  line-height: 1.35;
+}
+
+.aero-page a:focus-visible {
+  outline: 3px solid #06427b;
+  outline-offset: 4px;
+}
+
+.aero-hero {
+  position: relative;
+  display: flex;
+  min-height: min(850px, 100svh);
+  flex-direction: column;
+  background-color: #54c4e8;
+  background-image:
+    linear-gradient(90deg, rgb(9 80 134 / 10%), transparent 60%),
+    url("/aero-horizon.webp");
+  background-position: center, center;
+  background-size: cover;
+  isolation: isolate;
+}
+
+.aero-hero::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(1 58 103 / 12%), transparent 22%, transparent 70%, rgb(4 71 108 / 28%));
+  content: "";
+  pointer-events: none;
+}
+
+.aero-nav-shell {
+  padding: 26px clamp(18px, 4vw, 64px) 0;
+}
+
+.aero-nav {
+  display: flex;
+  width: min(100%, 1420px);
+  min-height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  margin: 0 auto;
+  padding: 8px 16px 8px 25px;
+  border: 1px solid rgb(255 255 255 / 86%);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgb(255 255 255 / 85%), rgb(234 249 255 / 64%));
+  box-shadow: 0 6px 24px rgb(5 60 97 / 13%), inset 0 1px 0 #fff;
+  backdrop-filter: blur(22px) saturate(1.3);
+}
+
+.aero-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #074477;
+  font-size: 1.65rem;
+  font-weight: 900;
+  letter-spacing: -0.09em;
+  white-space: nowrap;
+}
+
+.aero-wordmark-orb {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgb(255 255 255 / 95%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 27% 25%, #fff 0 10%, #b9f9ff 20%, #4cc7f3 45%, #1986c3 69%, #206bb5 100%);
+  box-shadow: inset -3px -4px 8px rgb(4 52 112 / 28%), 0 3px 8px rgb(16 99 152 / 22%);
+}
+
+.aero-wordmark-dot {
+  margin-left: -10px;
+  color: #54b910;
+}
+
+.aero-nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.5vw, 42px);
+  margin-left: auto;
+}
+
+.aero-nav-links a {
+  color: #18466a;
+  font-size: 0.85rem;
+  font-weight: 800;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.aero-nav-links a:hover {
+  color: #118cc8;
+  transform: translateY(-2px);
+}
+
+.aero-nav-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border: 1px solid rgb(150 218 235 / 80%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 64%);
+  color: #337293;
+  font-size: 0.72rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.aero-nav-status span,
+.aero-live span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #77d934;
+  box-shadow: 0 0 0 3px rgb(119 217 52 / 19%);
+}
+
+.aero-hero-inner {
+  display: flex;
+  width: min(100%, 1420px);
+  flex: 1;
+  align-items: center;
+  margin: 0 auto;
+  padding: 46px clamp(18px, 4vw, 64px) 76px;
+}
+
+.aero-hero-card {
+  position: relative;
+  width: min(700px, 100%);
+  padding: clamp(26px, 4vw, 56px);
+  border: 1px solid rgb(255 255 255 / 86%);
+  border-radius: 34px;
+  background: linear-gradient(139deg, rgb(255 255 255 / 84%), rgb(238 254 255 / 59%) 68%, rgb(226 251 255 / 74%));
+  box-shadow: 0 30px 70px rgb(3 73 115 / 22%), inset 0 1px 0 #fff, inset 0 -1px 0 rgb(255 255 255 / 50%);
+  backdrop-filter: blur(30px) saturate(1.4);
+}
+
+.aero-hero-card::before {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  bottom: 11px;
+  left: 11px;
+  border: 1px solid rgb(255 255 255 / 52%);
+  border-radius: 26px;
+  content: "";
+  pointer-events: none;
+}
+
+.aero-eyebrow,
+.aero-kicker,
+.aero-card-index {
+  color: #1977a8;
+  font-size: 0.73rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.aero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 12px 8px 9px;
+  border: 1px solid rgb(255 255 255 / 85%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 53%);
+}
+
+.aero-sparkle {
+  color: #61c921;
+  font-size: 1.15rem;
+  line-height: 0.7;
+}
+
+.aero-hero-card h1 {
+  max-width: 620px;
+  margin: 27px 0 22px;
+  color: #073b67;
+  font-size: clamp(3.8rem, 6.5vw, 7.2rem);
+  font-weight: 900;
+  letter-spacing: -0.085em;
+  line-height: 0.94;
+  text-wrap: balance;
+  text-shadow: 0 2px 0 rgb(255 255 255 / 47%);
+}
+
+.aero-hero-card > p {
+  max-width: 480px;
+  margin: 0;
+  color: #315d7b;
+  font-size: clamp(1rem, 1.5vw, 1.22rem);
+  line-height: 1.5;
+}
+
+.aero-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.aero-button {
+  display: inline-flex;
+  min-height: 49px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  font-weight: 900;
+  transition: transform 170ms ease, box-shadow 170ms ease;
+}
+
+.aero-button:hover,
+.aero-project-card:hover,
+.aero-contact-link:hover {
+  transform: translateY(-3px);
+}
+
+.aero-button-primary {
+  border: 1px solid #1473ba;
+  background: linear-gradient(180deg, #45baf0 0%, #168bd1 50%, #0870be 51%, #116bab 100%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 70%), 0 7px 16px rgb(10 109 174 / 25%);
+  color: white;
+  text-shadow: 0 1px 1px rgb(3 67 111 / 37%);
+}
+
+.aero-button-primary:hover {
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 70%), 0 12px 24px rgb(10 109 174 / 32%);
+}
+
+.aero-button-glass {
+  border: 1px solid rgb(255 255 255 / 91%);
+  background: linear-gradient(180deg, rgb(255 255 255 / 80%), rgb(235 252 255 / 57%));
+  box-shadow: inset 0 1px 0 #fff, 0 5px 14px rgb(22 96 130 / 10%);
+  color: #19628e;
+}
+
+.aero-hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px clamp(22px, 6vw, 90px);
+  border-top: 1px solid rgb(255 255 255 / 57%);
+  background: rgb(3 68 100 / 24%);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-shadow: 0 1px 2px rgb(0 62 88 / 47%);
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+}
+
+.aero-content {
+  position: relative;
+  background:
+    radial-gradient(circle at 88% 8%, rgb(151 241 255 / 55%), transparent 33%),
+    radial-gradient(circle at 8% 68%, rgb(185 248 198 / 55%), transparent 38%),
+    linear-gradient(180deg, #f2fcff, #e8f8f5 74%, #e0f1f8);
+}
+
+.aero-wrap {
+  width: min(100% - 48px, 1300px);
+  margin-inline: auto;
+}
+
+.aero-feature {
+  padding-block: clamp(70px, 8vw, 118px);
+}
+
+.aero-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 34px;
+}
+
+.aero-section-heading h2 {
+  max-width: 650px;
+  margin: 13px 0 0;
+  font-size: clamp(2.4rem, 4.3vw, 4.8rem);
+  font-weight: 900;
+  letter-spacing: -0.07em;
+  line-height: 0.98;
+}
+
+.aero-inline-link {
+  padding-bottom: 5px;
+  border-bottom: 2px solid #379bb7;
+  color: #096e9b;
+  font-size: 0.86rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.aero-project-card {
+  position: relative;
+  display: block;
+  min-height: 485px;
+  overflow: hidden;
+  padding: clamp(25px, 4vw, 54px);
+  border: 1px solid rgb(255 255 255 / 89%);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 80% 78%, rgb(130 244 246 / 58%), transparent 28%),
+    radial-gradient(circle at 94% 12%, rgb(155 249 161 / 78%), transparent 21%),
+    linear-gradient(130deg, #085a97, #0da6c9 65%, #3cc7bb);
+  box-shadow: 0 22px 60px rgb(18 122 151 / 16%), inset 0 1px 0 rgb(255 255 255 / 68%);
+  color: white;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.aero-project-card:hover {
+  box-shadow: 0 30px 70px rgb(18 122 151 / 25%), inset 0 1px 0 rgb(255 255 255 / 68%);
+}
+
+.aero-project-glow {
+  position: absolute;
+  top: 17%;
+  right: 7%;
+  width: clamp(200px, 30vw, 400px);
+  aspect-ratio: 1;
+  border: 2px solid rgb(255 255 255 / 59%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 23%, rgb(255 255 255 / 88%) 0 2%, rgb(198 255 255 / 51%) 9%, rgb(75 218 243 / 18%) 45%, rgb(8 124 180 / 15%) 70%);
+  box-shadow: inset -22px -28px 40px rgb(3 80 136 / 25%), inset 15px 18px 35px rgb(255 255 255 / 38%), 0 18px 45px rgb(3 68 113 / 23%);
+  pointer-events: none;
+}
+
+.aero-project-glow::after {
+  position: absolute;
+  top: 12%;
+  left: 18%;
+  width: 35%;
+  height: 13%;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 55%);
+  content: "";
+  filter: blur(13px);
+  transform: rotate(-26deg);
+}
+
+.aero-project-topline,
+.aero-project-body {
+  position: relative;
+  z-index: 1;
+}
+
+.aero-project-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.aero-card-index {
+  color: rgb(239 255 255 / 88%);
+}
+
+.aero-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 11px;
+  border: 1px solid rgb(255 255 255 / 56%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 22%);
+  font-size: 0.72rem;
+  font-weight: 900;
+  backdrop-filter: blur(12px);
+}
+
+.aero-project-body {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: clamp(48px, 7vw, 102px);
+}
+
+.aero-file-pill {
+  display: inline-block;
+  padding: 8px 11px;
+  border: 1px solid rgb(255 255 255 / 66%);
+  border-radius: 9px;
+  background: rgb(255 255 255 / 18%);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+}
+
+.aero-project-body h3 {
+  margin: 17px 0;
+  font-size: clamp(3.5rem, 6.7vw, 7.2rem);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  line-height: 0.87;
+  text-shadow: 0 4px 17px rgb(5 71 119 / 17%);
+}
+
+.aero-project-body p {
+  max-width: 510px;
+  margin: 0;
+  color: #e2fbff;
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.aero-project-cta {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 17px;
+  border: 1px solid rgb(255 255 255 / 85%);
+  border-radius: 13px;
+  background: linear-gradient(180deg, #fff, #d9f7ff);
+  box-shadow: 0 8px 20px rgb(3 74 120 / 18%), inset 0 1px 0 #fff;
+  color: #0b638f;
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+
+.aero-about {
+  padding: clamp(28px, 4vw, 55px);
+  border: 1px solid white;
+  border-radius: 32px;
+  background: linear-gradient(140deg, rgb(255 255 255 / 89%), rgb(240 254 255 / 60%));
+  box-shadow: 0 20px 48px rgb(30 115 147 / 10%), inset 0 1px 0 white;
+  backdrop-filter: blur(17px);
+}
+
+.aero-about-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.aero-about-star {
+  color: #8bcf38;
+  font-size: clamp(2.3rem, 5vw, 4.8rem);
+  line-height: 0.8;
+  text-shadow: 0 2px 0 white, 0 5px 15px rgb(77 150 44 / 20%);
+}
+
+.aero-about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(30px, 6vw, 95px);
+  margin-top: 62px;
+}
+
+.aero-about h2 {
+  margin: 0;
+  font-size: clamp(3.5rem, 8vw, 9rem);
+  font-weight: 900;
+  letter-spacing: -0.09em;
+  line-height: 0.83;
+}
+
+.aero-about-copy {
+  padding-bottom: 5px;
+}
+
+.aero-about-copy p {
+  max-width: 620px;
+  margin: 0;
+  color: #4f7190;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.aero-about-copy p + p {
+  margin-top: 21px;
+}
+
+.aero-about-copy .aero-about-statement {
+  color: #11507c;
+  font-size: clamp(1.4rem, 2.6vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.18;
+}
+
+.aero-contact {
+  position: relative;
+  overflow: hidden;
+  margin-top: clamp(70px, 8vw, 120px);
+  background:
+    radial-gradient(circle at 95% 95%, rgb(255 255 255 / 62%) 0 7%, transparent 19%),
+    radial-gradient(circle at 85% 18%, rgb(255 255 255 / 44%) 0 3%, transparent 13%),
+    linear-gradient(113deg, #b4ebf5 0%, #70dbe3 47%, #a9e6bd 100%);
+}
+
+.aero-contact-inner {
+  display: flex;
+  min-height: 350px;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  padding-block: clamp(50px, 7vw, 96px);
+}
+
+.aero-contact h2 {
+  margin: 15px 0 0;
+  font-size: clamp(3.8rem, 8vw, 8.5rem);
+  font-weight: 900;
+  letter-spacing: -0.085em;
+  line-height: 0.85;
+}
+
+.aero-contact-link {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 7px;
+  padding: 16px 20px;
+  border: 1px solid white;
+  border-radius: 15px;
+  background: linear-gradient(180deg, rgb(255 255 255 / 91%), rgb(231 252 255 / 65%));
+  box-shadow: 0 10px 26px rgb(26 116 155 / 14%), inset 0 1px 0 white;
+  color: #0e6593;
+  font-size: 0.9rem;
+  font-weight: 900;
+  transition: transform 180ms ease;
+}
+
+.aero-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding-block: 28px;
+  color: #51809a;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.aero-footer a:hover {
+  color: #0879af;
+}
+
+@media (max-width: 850px) {
+  .aero-nav-status {
+    display: none;
+  }
+  .aero-hero {
+    min-height: 820px;
+  }
+  .aero-hero-inner {
+    align-items: end;
+  }
+  .aero-project-body {
+    align-items: start;
+    flex-direction: column;
+  }
+  .aero-project-glow {
+    top: 6%;
+    right: -5%;
+    opacity: 0.62;
+  }
+  .aero-about-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-top: 44px;
+  }
+  .aero-contact-inner {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .aero-hero {
+    min-height: 760px;
+    background-position: center, 61% center;
+  }
+  .aero-nav-shell {
+    padding: 13px 12px 0;
+  }
+  .aero-nav {
+    min-height: 62px;
+    gap: 12px;
+    padding: 7px 12px;
+    border-radius: 16px;
+  }
+  .aero-wordmark {
+    gap: 7px;
+    font-size: 1.35rem;
+  }
+  .aero-wordmark-orb {
+    width: 20px;
+    height: 20px;
+  }
+  .aero-nav-links {
+    gap: 14px;
+  }
+  .aero-nav-links a {
+    font-size: 0.73rem;
+  }
+  .aero-nav-links a:last-child {
+    display: none;
+  }
+  .aero-hero-inner {
+    padding: 20px 12px 47px;
+  }
+  .aero-hero-card {
+    padding: 27px 23px 30px;
+    border-radius: 24px;
+  }
+  .aero-hero-card::before {
+    border-radius: 17px;
+  }
+  .aero-hero-card h1 {
+    margin-top: 22px;
+    font-size: clamp(3.2rem, 11.5vw, 5rem);
+  }
+  .aero-hero-actions {
+    margin-top: 25px;
+  }
+  .aero-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .aero-hero-bottom {
+    padding: 13px 17px;
+    font-size: 0.61rem;
+  }
+  .aero-wrap {
+    width: min(100% - 28px, 1300px);
+  }
+  .aero-section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .aero-project-card {
+    min-height: 550px;
+    padding: 25px 20px;
+    border-radius: 25px;
+  }
+  .aero-project-body {
+    margin-top: 84px;
+  }
+  .aero-project-body h3 {
+    font-size: clamp(3.1rem, 13vw, 5rem);
+  }
+  .aero-project-cta {
+    margin-top: 10px;
+  }
+  .aero-about {
+    padding: 27px 23px;
+    border-radius: 25px;
+  }
+  .aero-contact-inner {
+    min-height: 370px;
+  }
+  .aero-footer {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}

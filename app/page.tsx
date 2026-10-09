@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -19,13 +19,10 @@ export default function Home() {
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
-        <p className="eyebrow">Alex Ong / Builder</p>
-        <h1 id="hero-title">Useful tools for oddly specific problems.</h1>
+        <p className="eyebrow">Alex Ong</p>
+        <h1 id="hero-title">Just some things I've made.</h1>
         <div className="hero-foot">
-          <p>
-            I make focused software that gives old formats and stubborn
-            workflows a way forward.
-          </p>
+          <p></p>
           <Link className="text-link" href="/projects">
             See the work <span aria-hidden="true">→</span>
           </Link>
@@ -56,8 +53,8 @@ export default function Home() {
             <p className="project-status">Live now</p>
             <h3>Windows Journal → PDF</h3>
             <p>
-              Convert old .jnt files into portable PDFs. Fast, private, and
-              entirely in your browser.
+              Convert old .jnt files into PDFs. Fast, private, and entirely in
+              your browser.
             </p>
           </div>
           <div className="project-action">

@@ -67,7 +67,7 @@ export default function Home() {
           <div className="aero-section-heading">
             <div>
               <span className="aero-kicker">01 / Selected project</span>
-              <h2 id="aero-project-title">Check it out</h2>
+              <h2 id="aero-project-title">Check it out.</h2>
             </div>
             <Link href="/projects" className="aero-inline-link">
               All projects <span aria-hidden="true">→</span>

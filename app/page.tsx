@@ -1,8 +1,14 @@
 import Link from "next/link";
+import {
+  formatConceptDate,
+  getLatestConcept,
+} from "./concepts/posts";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
 export default function Home() {
+  const latestConcept = getLatestConcept();
+
   return (
     <main className="aero-page" id="top">
       <section className="aero-hero" aria-labelledby="aero-title">
@@ -14,6 +20,7 @@ export default function Home() {
             </Link>
             <div className="aero-nav-links">
               <Link href="/projects">Projects</Link>
+              <Link href="/concepts">Concepts</Link>
               <a href="#about">About</a>
               <a
                 href="https://github.com/a0ng"
@@ -108,12 +115,58 @@ export default function Home() {
         </section>
 
         <section
+          className="aero-feature aero-concepts-feature aero-wrap"
+          aria-labelledby="aero-concept-title"
+        >
+          <div className="aero-section-heading">
+            <div>
+              <span className="aero-kicker">02 / Latest concept</span>
+              <h2 id="aero-concept-title">Something to think about.</h2>
+            </div>
+            <Link href="/concepts" className="aero-inline-link">
+              All concepts <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+
+          <Link
+            className="aero-concept-card"
+            href={latestConcept ? `/concepts/${latestConcept.slug}` : "/concepts"}
+          >
+            <span className="aero-concept-shimmer" aria-hidden="true" />
+            <span className="aero-concept-topline">
+              <span className="aero-card-index">001 / CONCEPT</span>
+              <span className="aero-concept-date">
+                {latestConcept
+                  ? formatConceptDate(latestConcept.publishedAt)
+                  : "Coming soon"}
+              </span>
+            </span>
+            <span className="aero-concept-body">
+              <span className="aero-concept-label">
+                {latestConcept ? "A line from the latest post" : "Placeholder quote"}
+              </span>
+              <span className="aero-concept-quote">
+                “{latestConcept?.quote ?? "A thought worth sharing will live here."}”
+              </span>
+              <span className="aero-concept-bottom">
+                <span className="aero-concept-title">
+                  {latestConcept?.title ?? "First concept coming soon"}
+                </span>
+                <span className="aero-project-cta">
+                  {latestConcept ? "Read the concept" : "Explore Concepts"} <Arrow />
+                </span>
+              </span>
+            </span>
+          </Link>
+        </section>
+
+        <section
           className="aero-about aero-wrap"
           id="about"
           aria-labelledby="aero-about-title"
         >
           <div className="aero-about-header">
-            <span className="aero-kicker">02 / About</span>
+            <span className="aero-kicker">03 / About</span>
             <span className="aero-about-star" aria-hidden="true">
               ✳
             </span>
@@ -139,7 +192,7 @@ export default function Home() {
         <section className="aero-contact" aria-labelledby="aero-contact-title">
           <div className="aero-wrap aero-contact-inner">
             <div>
-              <span className="aero-kicker">03 / Contact</span>
+              <span className="aero-kicker">04 / Contact</span>
               <h2 id="aero-contact-title">
                 Say hello
                 <br />

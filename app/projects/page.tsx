@@ -15,6 +15,7 @@ export default function Projects() {
         </Link>
         <nav aria-label="Primary navigation">
           <Link href="/">Home</Link>
+          <Link href="/concepts">Concepts</Link>
           <a href="https://github.com/a0ng" target="_blank" rel="noreferrer">
             GitHub <span aria-hidden="true">↗</span>
           </a>

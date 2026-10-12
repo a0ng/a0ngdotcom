@@ -4,6 +4,15 @@ The homepage and projects page are a small vinext app. Edit the copy in
 `app/page.tsx` and `app/projects/page.tsx`, and edit the visual styles in
 `app/globals.css`.
 
+## Concepts posts
+
+The Concepts archive starts empty. Add a post object to `app/concepts/posts.ts`
+with a unique `slug`, an ISO `publishedAt` date (`YYYY-MM-DD`), a short
+`summary`, a brief `quote` excerpt (without quotation marks), and `paragraphs`
+for the article body. Posts are ordered by date; the newest one automatically
+replaces the homepage's clearly labeled placeholder preview and links to its
+article at `/concepts/<slug>`.
+
 ## Cloudflare deployment
 
 Connect this GitHub repository to Cloudflare Workers Builds. Create a Worker

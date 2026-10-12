@@ -54,8 +54,10 @@ a:focus-visible {
   display: flex;
 }
 .site-header nav a {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   min-width: 138px;
   padding: 0 20px;
   border-left: var(--line);
@@ -63,6 +65,7 @@ a:focus-visible {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  white-space: nowrap;
   transition:
     background 120ms ease,
     color 120ms ease;
@@ -304,6 +307,9 @@ footer {
   line-height: 0.72;
   text-transform: uppercase;
 }
+.concepts-archive-hero h1 {
+  font-size: clamp(5rem, 11vw, 10rem);
+}
 .archive-hero > p:last-child {
   max-width: 360px;
   margin: 0;
@@ -362,6 +368,50 @@ footer {
 .archive-row--empty:hover {
   background: var(--ink);
   color: var(--paper);
+}
+
+.concept-article {
+  max-width: 1100px;
+  min-height: 70svh;
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 90px) clamp(24px, 5vw, 64px) 120px;
+}
+.concept-back {
+  display: inline-block;
+  margin-bottom: clamp(70px, 10vw, 145px);
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 5px;
+  font-weight: 800;
+}
+.concept-article h1 {
+  margin: 25px 0;
+  font-size: clamp(3.6rem, 9vw, 9rem);
+  font-weight: 950;
+  letter-spacing: -0.08em;
+  line-height: 0.9;
+}
+.concept-summary {
+  max-width: 750px;
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  line-height: 1.3;
+}
+.concept-article blockquote {
+  margin: clamp(60px, 8vw, 110px) 0;
+  border-left: 8px solid var(--red);
+  padding-left: clamp(20px, 4vw, 55px);
+  font-size: clamp(2rem, 4.7vw, 4.8rem);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 1.05;
+}
+.concept-prose {
+  max-width: 720px;
+  margin-left: auto;
+  font-size: clamp(1.1rem, 1.65vw, 1.35rem);
+  line-height: 1.65;
+}
+.concept-prose p + p {
+  margin-top: 1.5em;
 }
 
 @media (max-width: 760px) {
@@ -441,6 +491,9 @@ footer {
   }
   .archive-hero h1 {
     margin: 60px 0 34px;
+  }
+  .concepts-archive-hero h1 {
+    font-size: clamp(3.4rem, 15vw, 6rem);
   }
   .archive-row {
     grid-template-columns: 58px minmax(0, 1fr) 52px;
@@ -917,6 +970,108 @@ footer {
   font-weight: 900;
 }
 
+.aero-concepts-feature {
+  padding-top: 0;
+}
+
+.aero-concept-card {
+  position: relative;
+  display: flex;
+  min-height: 440px;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: clamp(26px, 4vw, 54px);
+  border: 1px solid rgb(255 255 255 / 95%);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 83% 33%, rgb(255 255 255 / 78%) 0 5%, transparent 30%),
+    radial-gradient(circle at 97% 106%, rgb(112 230 191 / 65%), transparent 34%),
+    linear-gradient(126deg, #b4d9f5 0%, #d8f7ff 53%, #b7f0e9 100%);
+  box-shadow: 0 22px 60px rgb(18 122 151 / 12%), inset 0 1px 0 #fff;
+  color: #0b416f;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.aero-concept-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 30px 70px rgb(18 122 151 / 20%), inset 0 1px 0 #fff;
+}
+
+.aero-concept-shimmer {
+  position: absolute;
+  right: 7%;
+  bottom: -43%;
+  width: clamp(260px, 37vw, 510px);
+  aspect-ratio: 1;
+  border: 1px solid rgb(255 255 255 / 70%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 25% 20%, rgb(255 255 255 / 81%), rgb(194 255 255 / 37%) 37%, rgb(64 167 207 / 15%) 75%);
+  box-shadow: inset 15px 20px 35px rgb(255 255 255 / 70%), inset -20px -24px 35px rgb(37 112 177 / 14%);
+  pointer-events: none;
+}
+
+.aero-concept-topline,
+.aero-concept-body {
+  position: relative;
+  z-index: 1;
+}
+
+.aero-concept-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.aero-concept-topline .aero-card-index,
+.aero-concept-date {
+  color: #247399;
+  font-family: "Courier New", monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.aero-concept-body,
+.aero-concept-quote,
+.aero-concept-label {
+  display: block;
+}
+
+.aero-concept-label {
+  margin-bottom: 13px;
+  color: #237ca0;
+  font-family: "Courier New", monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.aero-concept-quote {
+  max-width: 950px;
+  font-size: clamp(2.5rem, 5.2vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.065em;
+  line-height: 1.02;
+}
+
+.aero-concept-bottom {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.aero-concept-title {
+  max-width: 590px;
+  font-size: clamp(1.1rem, 2vw, 1.7rem);
+  font-weight: 800;
+}
+
 .aero-about {
   padding: clamp(28px, 4vw, 55px);
   border: 1px solid white;
@@ -1055,6 +1210,10 @@ footer {
     align-items: start;
     flex-direction: column;
   }
+  .aero-concept-bottom {
+    align-items: start;
+    flex-direction: column;
+  }
   .aero-project-glow {
     top: 6%;
     right: -5%;
@@ -1100,6 +1259,9 @@ footer {
     font-size: 0.73rem;
   }
   .aero-nav-links a:last-child {
+    display: none;
+  }
+  .aero-nav-links a[href="#about"] {
     display: none;
   }
   .aero-hero-inner {
@@ -1148,6 +1310,17 @@ footer {
   }
   .aero-project-cta {
     margin-top: 10px;
+  }
+  .aero-concept-card {
+    min-height: 490px;
+    padding: 25px 22px;
+    border-radius: 25px;
+  }
+  .aero-concept-quote {
+    font-size: clamp(2.35rem, 9vw, 4rem);
+  }
+  .aero-concept-date {
+    text-align: right;
   }
   .aero-about {
     padding: 27px 23px;

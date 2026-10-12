@@ -486,6 +486,16 @@ footer {
   outline-offset: 4px;
 }
 
+@media (pointer: fine) {
+  .aero-page {
+    cursor: url("/aero-cursor.svg") 3 2, auto;
+  }
+
+  .aero-page a {
+    cursor: url("/aero-cursor-link.svg") 19 18, pointer;
+  }
+}
+
 .aero-hero {
   position: relative;
   display: flex;

@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'A growing archive of tools and experiments by Alex Ong.',
+  title: "Projects",
+  description: "Tools and experiments.",
 };
 
 export default function Projects() {
